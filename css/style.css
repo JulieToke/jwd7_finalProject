@@ -1,3 +1,99 @@
 .selector-for-some-widget {
     box-sizing: content-box;
   }
+  h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+        
+    }
+    h5{
+    margin: auto;
+    }
+   .addTaskbutton{
+    color: black;
+    text-align: center;
+    align-content: center;
+    background-color: #FC8B24;
+    width: 75px;
+    height: 50px;
+    border: 2px solid #583205;
+    float: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: xx-large;          
+  }
+
+  button {
+    border-radius: 20px;
+    padding-right: 100px;
+  }
+  .container{
+      display: inline-flexbox;
+      min-height: 100px;
+      padding: 25px;  
+      align-items: space around;
+  }
+  .palePinkbutton{
+      
+    color: black;
+    text-align: center;
+    align-content: center;
+    background-color: #F3979750;
+    width: 120px;
+    height: 50px;
+    border: 2px solid #583205;
+    Font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: large;
+    border-radius: 20px 
+
+  }
+  a{
+      display: inline-flex;
+
+  }
+  .pages{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: black;
+    display: inline-block;
+    width: 25%;
+
+  }
+  .pinkbutton{
+    color: black;
+    text-align: center;
+    align-content: center;
+    background-color: #F39797;
+    width: 120px;
+    height: 50px;
+    border: 2px solid #583205;
+    Font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: large;
+    border-radius: 20px  
+    
+  }
+.submitButton{
+    color: black;
+    text-align: center;    
+    width: 80px;
+    height: 50px;
+    border: 2px solid #583205;
+    Font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: large;
+    background-color: #39BFA7;
+    border-radius: 15px;
+    grid-column: 10 / span 2;
+}
+.resetButton{
+    color: black;
+    text-align: center;
+    width: 80px;
+    height: 50px;
+    border: 2px solid #583205;
+    Font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: large;
+    background-color:  #A0920F    ;
+    border-radius: 15px;
+    grid-column: 1 / span 2;
+}
+.row{ 
+    flex: inline-block;
+}
