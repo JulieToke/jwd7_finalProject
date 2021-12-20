@@ -1,4 +1,4 @@
-.selector-for-some-widget {
+*{
     box-sizing: content-box;
   }
   h1{
@@ -94,6 +94,5 @@
     border-radius: 15px;
     grid-column: 1 / span 2;
 }
-.row{ 
-    flex: inline-block;
-}
+
+
