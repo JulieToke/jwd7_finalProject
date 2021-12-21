@@ -11,8 +11,8 @@
     <title>Daily Planner</title>
   </head>
   <body>
-      <header class="container">
-          <div class="row">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">      
             <div class="col-6"> 
                 <h1>Daily Planner</h1>
             </div>
@@ -25,14 +25,14 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Add Task</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Task</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>        
         </div>
         <div class="modal-body">
             <body>
-                <div class="container bg-light">                    
+                <div class="container">                    
                     <div class="row">
                         <div class="col">
                             <form id="newTaskForm">
@@ -44,34 +44,44 @@
                                     <label for="newTaskDescription">Description</label>
                                     <textarea type="text" class="form-control" id="newTaskDescription"></textarea>
                                 </div>
-                                <div class="form-row">
-                                    <div class="form-group col">
-                                        <label for="newTaskAssignedTo">Assigned To</label>
-                                        <input type="text" class="form-control" id="newTaskAssignedTo">
-                                    </div>
-                                <div class="form-group col">
-                                        <label for="newTaskDueDate">Due Date</label>
-                                        <input type="date" class="form-control" id="newTaskDueDate">
+                                
+                                <div class="form-group">
+                                    <label for="dueDate">Due Date:</label>
+                                    <input type="date" class="form-control" id="dueDate" name="dueDate" value="yyy-mm-dd" min="2021-01-01">
                                 </div>
-                                <div class="form-group col">
-                                            <label for="newTaskStatus">Status</label>                                                                                           
-                                                <select id="planner_note_context" class="context_id" name="context_code">
-                                                    <option value="ToDo">ToDo</option>                  
-                                                    <option value="In Progress">In Progress</option>
-                                                    <option value="In Review">In Review</option>
-                                                    <option value="Done">Done</option>                                  
-                                                </select>
+
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select class="form-control" id="status">
+                                        <option selected>Select status</option>
+                                        <option>To Do</option>
+                                        <option >In Progress</option>
+                                        <option >Review</option>
+                                        <option >Done</option>
+                                    </select>
+                                </div> 
+
+                                <div class="form-group">
+                                    <label for="assignedTo">Assign to:</label>
+                                    <input type="text" class="form-control" id="assignedTo" aria-describedby="assignedTo">
                                 </div>
-                            </div>
-                                    <div class+"row">
-                                        <div class="col-2">
+
+                                <nav class="navbar navbar-expand-lg">
+                                    <div class="container-fluid">   
+                                        <div class="col-6">
                                             <input class="btn resetButton" type="reset" value="Reset">
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-6">
                                             <input class="btn submitButton" type="submit" value="Submit">
-                                        </div>                                       
-                                    </div>                                
+                                        </div>                                    
+                                                                        
+                                                                                                              
+                                    </div>
+                                </nav>
+                            </div>
                             </form>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -95,31 +105,142 @@
           
         </div>
       </div>
-    </div>
+    </nav>
   </div>
           
             </div>
           </div>
       </header>
       <div class="container">
-        <div class="row">
-            <div class="col-3">
-                <a class="pinkbutton nav-link" href="#">ToDo</a>
-            </div>
-            <div class="col-3">
-                <a class="palePinkbutton nav-link" href="#">InProgress</a>
-            </div>
-            <div class="col-3">
-                <a class="palePinkbutton nav-link" href="#">InReview</a>
-            </div>
-            <div class="col-3">
-                <a class="palePinkbutton nav-link" href="#">Done</a>
-            </div>          
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="pinkbutton nav-link" href="#">ToDo</a>
+            <a class="palePinkbutton nav-link" href="#">In Progress</a>
+            <a class="palePinkbutton nav-link" href="#">In Review</a>
+            <a class="palePinkbutton nav-link" href="#">Done</a>
           </div>
-        </div>
-    
+        </nav>
+      </div>
 
-    
+      <div class="grid-container">
+        <div class="grid-item1">
+            <div class="row">
+                <div class="col">
+                    <h2>Tasks</h2>
+                    <ul class="list-group" id="tasksList">
+                        <li class="list-group-item" data-task-id="1">
+                            <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
+                                <h5>clean my teeth</h5>
+                                <span class="badge">TODO</span>
+                            </div>
+                            <div class="d-flex w-100 mb-3 justify-content-between">
+                                <small>Assigned To: Julie</small>
+                                <small>Due: 21/12/2021</small>
+                            </div>
+                            <p>with toothpaste</p>
+                            <div class="d-flex w-100 justify-content-end">
+                                <div class="card-footer">
+                                    <button type="button" class="btn btn btn-outline-secondary" data-toggle="modal" data-target="#staticBackdrop">Edit</button> 
+                                     
+                                    <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                    <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Edit Task</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>        
+        </div>
+        <div class="modal-body">
+            <body>
+                <div class="container">                    
+                    <div class="row">
+                        <div class="col">
+                            <form id="newTaskForm">
+                                <div class="form-group">
+                                    <label for="newTaskNameInput">Name</label>
+                                    <input type="text" class="form-control" id="newTaskNameInput">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newTaskDescription">Description</label>
+                                    <textarea type="text" class="form-control" id="newTaskDescription"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="dueDate">Due Date:</label>
+                                    <input type="date" class="form-control" id="dueDate" name="dueDate" value="yyy-mm-dd" min="2021-01-01">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select class="form-control" id="status">
+                                        <option selected>Select status</option>
+                                        <option>To Do</option>
+                                        <option >In Progress</option>
+                                        <option >Review</option>
+                                        <option >Done</option>
+                                    </select>
+                                </div> 
+
+                                <div class="form-group">
+                                    <label for="assignedTo">Assign to:</label>
+                                    <input type="text" class="form-control" id="assignedTo" aria-describedby="assignedTo">
+                                </div>
+
+                                <nav class="navbar navbar-expand-lg">
+                                    <div class="container-fluid">   
+                                        <div class="col-6">
+                                            <input class="btn resetButton" type="reset" value="Reset">
+                                        </div>
+                                        <div class="col-6">
+                                            <input class="btn submitButton" type="submit" value="Submit">
+                                        </div>                                    
+                                                                        
+                                                                                                              
+                                    </div>
+                                </nav>
+                            </div>
+                            </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+                    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+                    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+                    crossorigin="anonymous"></script>
+            
+                <script src="js/TaskManager.js"></script>
+                <script src="js/index.js"></script>
+            </body>
+          ...
+        </div>
+        <div class="modal-footer">
+          
+        </div>
+                                </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col"></div>
+            </div>
+            <input type="radio" class="radio-selector" value="true" align="end">
+        </div>
+        <div class="grid-item2">Task 1</div>
+        <div class="grid-item3">Task 2</div>
+        <div class="grid-item1">Task 3</div>
+        <div class="grid-item2">Task 4</div>
+        <div class="grid-item3">Task 5</div>
+      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -131,10 +252,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="js/TaskManager.js"></script>
     <script src="js/index.js"></script>  
-
-
-
-
 
 </body>
 </html>
