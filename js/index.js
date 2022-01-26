@@ -27,6 +27,8 @@ newTaskForm.addEventListener('submit', (event) => {
     const newTaskStatus = document.querySelector('#newTaskStatus');
     const newTaskDueDate = document.querySelector('#newTaskDueDate');
 
+    const modalTitle = document.querySelector('#staticBackdropLabel');
+
     /*
         Validation code here
     */
@@ -58,6 +60,34 @@ newTaskForm.addEventListener('submit', (event) => {
     // Dismiss modal dialogue bootstrap documentation link below
     // https://getbootstrap.com/docs/4.0/components/modal/#:~:text=modal%20when%20initialized.-,Methods,-Asynchronous%20methods%20and
     $('#staticBackdrop').modal('toggle');
+    modalTitle.textContent = 'Add New Task';
+});
+
+// Select modal
+const modal = document.querySelector('#staticBackdrop');
+
+// Close form event listener to reset form values
+modal.addEventListener('click', (event) => {
+    if (event.target.classList.contains('resetButton')) {
+        // Get modal inputs
+        const newTaskId = document.querySelector('#newTaskId');
+        const newTaskNameInput = document.querySelector('#newTaskNameInput');
+        const newTaskDescription = document.querySelector('#newTaskDescription');
+        const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
+        const newTaskStatus = document.querySelector('#newTaskStatus');
+        const newTaskDueDate = document.querySelector('#newTaskDueDate');
+
+        const modalTitle = document.querySelector('#staticBackdropLabel');
+        
+        // Clear the form
+        newTaskId.value = '-1';
+        newTaskNameInput.value = '';
+        newTaskDescription.value = '';
+        newTaskAssignedTo.value = '';
+        newTaskDueDate.value = '';
+
+        modalTitle.textContent = 'Add New Task';
+    }
 });
 
 // Select the Tasks List
@@ -104,6 +134,8 @@ tasksList.addEventListener('click', (event) => {
         const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
         const newTaskStatus = document.querySelector('#newTaskStatus');
         const newTaskDueDate = document.querySelector('#newTaskDueDate');
+
+        const modalTitle = document.querySelector('#staticBackdropLabel');
         
         // Fill the modal inputs with the task-to-edit's values
         newTaskId.value = task.id;
@@ -112,6 +144,8 @@ tasksList.addEventListener('click', (event) => {
         newTaskAssignedTo.value = task.assignedTo;
         newTaskStatus.value = task.status;
         newTaskDueDate.value = task.dueDate;
+
+        modalTitle.textContent = 'Edit Task';
     }
 
     // Check if a "Delete" button was clicked
