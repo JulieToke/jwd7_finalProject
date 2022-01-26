@@ -20,9 +20,11 @@ newTaskForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     // Select the inputs
+    const newTaskId = document.querySelector('#newTaskId');
     const newTaskNameInput = document.querySelector('#newTaskNameInput');
     const newTaskDescription = document.querySelector('#newTaskDescription');
     const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
+    const newTaskStatus = document.querySelector('#newTaskStatus');
     const newTaskDueDate = document.querySelector('#newTaskDueDate');
 
     /*
@@ -30,13 +32,15 @@ newTaskForm.addEventListener('submit', (event) => {
     */
 
     // Get the values of the inputs
+    const newId = newTaskId.value;
     const name = newTaskNameInput.value;
     const description = newTaskDescription.value;
     const assignedTo = newTaskAssignedTo.value;
+    const status = newTaskStatus.value;
     const dueDate = newTaskDueDate.value;
 
     // Add the task to the task manager
-    taskManager.addTask(name, description, assignedTo, dueDate);
+    taskManager.addTask(name, description, assignedTo, dueDate, status, newId);
 
     // Save the tasks to localStorage
     taskManager.save();
@@ -45,10 +49,15 @@ newTaskForm.addEventListener('submit', (event) => {
     taskManager.render();
 
     // Clear the form
+    newTaskId.value = '-1';
     newTaskNameInput.value = '';
     newTaskDescription.value = '';
     newTaskAssignedTo.value = '';
     newTaskDueDate.value = '';
+
+    // Dismiss modal dialogue bootstrap documentation link below
+    // https://getbootstrap.com/docs/4.0/components/modal/#:~:text=modal%20when%20initialized.-,Methods,-Asynchronous%20methods%20and
+    $('#staticBackdrop').modal('toggle');
 });
 
 // Select the Tasks List
@@ -75,6 +84,34 @@ tasksList.addEventListener('click', (event) => {
 
         // Render the tasks
         taskManager.render();
+    }
+
+    // Check if an "Edit" button was clicked
+    if (event.target.classList.contains('edit-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement;
+
+        // Get the taskId of the parent Task.
+        const taskId = Number(parentTask.dataset.taskId);
+
+        // Get the task from the TaskManager using the taskId
+        const task = taskManager.getTaskById(taskId);
+
+        // Get modal inputs
+        const newTaskId = document.querySelector('#newTaskId');
+        const newTaskNameInput = document.querySelector('#newTaskNameInput');
+        const newTaskDescription = document.querySelector('#newTaskDescription');
+        const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
+        const newTaskStatus = document.querySelector('#newTaskStatus');
+        const newTaskDueDate = document.querySelector('#newTaskDueDate');
+        
+        // Fill the modal inputs with the task-to-edit's values
+        newTaskId.value = task.id;
+        newTaskNameInput.value = task.name;
+        newTaskDescription.value = task.description;
+        newTaskAssignedTo.value = task.assignedTo;
+        newTaskStatus.value = task.status;
+        newTaskDueDate.value = task.dueDate;
     }
 
     // Check if a "Delete" button was clicked
