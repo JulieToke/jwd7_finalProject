@@ -2,16 +2,22 @@
   box-sizing: content-box;
 }
 h1{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;        
-h1{
-    color: #583205;      
-}
+  font-family:Verdana, Geneva, Tahoma, sans-serif; color: #583205;  
+}     
+
 #tasks{
     background-color: #F1EAD0";
     text-align: center;
 }
 nav{
     display: inline-flex;
+}
+#modalDialogue{
+  background: #F1EAD0;
+  border-radius: 16px;
+  outline-style: inset;
+  outline-color: #583205;
+  outline-width: 2px;
 }
 #addTaskbutton{
   color: #583205;

@@ -8,21 +8,24 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => `
     <div class="card-header">
       <h2>Task: ${name}</h2> 
       <div class="d-flex w-100 mb-3 justify-content-end">
-      <p>Due: ${dueDate}</p>
-    </div>
+        <p>Due: ${dueDate}</p>
+      </div>
     </div>
     <div class="card-body">
       <h4 class="card-title justify-content-center">Details: ${description}</h4>
       <p class="card-text"></p>
-      
     </div>
-      <div class="d-flex w-100 mb-3 justify-content-end">  
+
+    <div class="d-flex w-100 mb-3 justify-content-end">  
       <p>Assigned To: ${assignedTo}</p>
     </div>
+
     <div class="card-footer">
           <!-- Button trigger modal -->
-      <button type="button" class="btn btn-light btn-text-dark" data-toggle="modal" data-target="#staticBackdrop">Edit</button>
-      <button id="doneButton" class="btn btn-info done-btn float-middle ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>    
+      <button type="button" class="btn btn-light edit-button btn-text-dark" data-toggle="modal" data-target="#staticBackdrop">Edit</button>
+
+      <button id="doneButton" class="btn btn-info done-button float-middle ${status === 'To Do' ? 'visible' : 'invisible'}">Mark As Done</button> 
+
       <button id="deleteButton" class="btn btn-danger btn-text-white delete-button float-right">Delete</button> 
     </div>
   </li>
@@ -38,38 +41,17 @@ class TaskManager {
     }
 
     // Create the addTask method
-    addTask(name, description, assignedTo, dueDate, status) {
-        const task = {
-            // Increment the currentId property
-            id: this.currentId++,
-            name: name,
-            description: description,
-            assignedTo: assignedTo,
-            dueDate: dueDate,
-            status: status
-        };
-
-        // Push the task to the tasks property
-        this.tasks.push(task);
-    }
-
-    // Create the editTask method
-    editTask(taskId) {
-        // Find the task with matching Id
-        const task;
-        // Loop over the tasks and find the task with the id passed as a parameter
-        for (let i = 0; i < this.tasks.length; i++) {
-            // Get the current task in the loop
-            task = this.tasks[i];
-            // Check if its the right task by comparing the task's id to the id passed as a parameter
-            if (task.id === taskId) {
-              break;
-            }
+    addTask(name, description, assignedTo, dueDate, status, newId) {
+        // When adding a task increment the id
+        // When editing the task replace the old id (and delete the old task) 
+        if (newId === '-1') {
+            newId = this.currentId++
+        } else {
+            this.deleteTask(Number(newId));
         }
-        //
-        task = {
-            // Increment the currentId property
-            id: taskId,
+        // create the new task
+        const task = {
+            id: Number(newId),
             name: name,
             description: description,
             assignedTo: assignedTo,
@@ -77,7 +59,7 @@ class TaskManager {
             status: status
         };
 
-        // Push the task to the tasks property
+        // Push the new task to the new task list
         this.tasks.push(task);
     }
 
