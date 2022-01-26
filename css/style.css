@@ -3,130 +3,84 @@
 }
 h1{
   font-family:Verdana, Geneva, Tahoma, sans-serif;        
+h1{
+    color: #583205;      
 }
-  #addTask{
-  text-align: center;
+#tasks{
+    background-color: #F1EAD0";
+    text-align: center;
 }
- .addTaskbutton{
-  color: black;
+nav{
+    display: inline-flex;
+}
+#addTaskbutton{
+  color: #583205;
   text-align: center;
   align-content: center;
   background-color: #FC8B24;
-  width: 75px;
+  width: 100px;
   height: 50px;
   border: 2px solid #583205;
-  float: right;
+  border-radius: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif; 
-  font-size: xx-large;          
-}
-button {
-  border-radius: 20px;
-  padding-right: 100px;
-}
-.container{
-    display: inline;
-    min-height: 100px;
-    padding: 25px;  
-}
-
-.row.navigation{
-display: grid;
+  font-size: large;  
 }
 .palePinkbutton{      
-  color: black;
-  text-align: center;
-  align-content: center;
-  background-color: #F3979750;
-  width: 120px;
-  height: 50px;
-  border: 2px solid #583205;
-  Font-family: Verdana, Geneva, Tahoma, sans-serif; 
-  font-size: large;
-  border-radius: 20px;
-}
-a{
-  display: inline;
-} 
-.pinkbutton{
-  color: black;
-  text-align: center;
-  align-content: center;
-  background-color: #F39797;
-  width: 120px;
-  height: 50px;
-  border: 2px solid #583205;
-  Font-family: Verdana, Geneva, Tahoma, sans-serif; 
-  font-size: large;
-  border-radius: 20px;    
-}
-.submitButton{
-  color: black;
-  text-align: center;    
-  width: 80px;
-  height: 50px;
-  border: 2px solid #583205;
-  Font-family: Verdana, Geneva, Tahoma, sans-serif; 
-  font-size: large;
-  background-color: #39BFA7;
-  border-radius: 15px;
+    color: black;
+    text-align: center;
+    align-content: center;
+    background-color: #F3979750;
+    width: 120px;
+    height: 50px;
+    border: 2px solid #583205;
+    Font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: large;
+    border-radius: 20px;
   }
-.resetButton{
-  color: black;
-  text-align: center;
-  width: 80px;
-  height: 50px;
-  border: 2px solid #583205;
-  Font-family: Verdana, Geneva, Tahoma, sans-serif; 
-  font-size: large;
-  background-color:  #A0920F    ;
-  border-radius: 15px;
-  
+  a{
+    display: inline;
+  } 
+  .pinkbutton{
+    color: black;
+    text-align: center;
+    align-content: center;
+    background-color: #F39797;
+    width: 120px;
+    height: 50px;
+    border: 2px solid #583205;
+    Font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: large;
+    border-radius: 20px;    
+  }
+#date{
+    font-size: x-large;       
 }
-
-.grid-container {
-display: grid;
-grid-template-columns: auto;
-grid-template-rows: auto auto auto auto auto;
-padding: 10px;
-grid-gap: 10px;
+.list-group-item{
+    margin: 15px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border: 20px, solid, #583205;
+    background-color: #69D3C0;
+    }
+#resetButton{
+    float: left;
+    border-radius: 15%;
+    border: 2px, solid,#583205;
 }
-
-.grid-item1 {
-background-color: #69D3C0;
-border: 1px solid rgba(0, 0, 0, 0.8);
-padding: 20px;
-font-size: 30px;
-text-align: left;
-border-radius: 15px;
+#submitButton{
+    float: right;
+    border-radius: 15%;
+    border: 2px, solid,#583205;
 }
-
-.grid-item2 {
-background-color: #DDB117;
-border: 1px solid rgba(0, 0, 0, 0.8);
-padding: 20px;
-font-size: 30px;
-text-align: left;
-border-radius: 15px;
+#staticBackdrop{
+    border: 15px, solid, #583205;
 }
-
-.grid-item3 {
-background-color: #A3B877;
-border: 1px solid rgba(0, 0, 0, 0.8);
-padding: 20px;
-font-size: 30px;
-text-align: left;
-border-radius: 15px;
+h5{
+    text-align: center;
+    color: #fc7124;
 }
-
-.radio-selector {
-margin: .4rem;
-}
-
-h2 {
-color: #7E3F05;
-  padding: 1px 1px;
-}
-h3 {
-color: #FC7124;
-padding: 1px 1px;
+#tasksList{
+    height: fit-content;
 }
