@@ -1,6 +1,10 @@
 *{
   box-sizing: content-box;
 }
+*{
+  box-sizing: content-box;
+  font-family: 'Work Sans';
+}
 h1{
   font-family:Verdana, Geneva, Tahoma, sans-serif; color: saddlebrown;  
 }     
@@ -31,24 +35,14 @@ nav{
   font-family: Verdana, Geneva, Tahoma, sans-serif; 
   font-size: large;  
 }
-  a{
-    display: inline;
-  } 
-.nav-pills{
-  margin: 20px;
-}
-.nav-item{
-  outline-color: saddlebrown;
-  outline-style: solid;
-  outline-width: 2px;
-  border-radius: 15px; 
-}
+
 #deleteButton{
   border-radius: 15px;
   background-color: crimson;
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
+  float: right;
 }
 #editButton{
   border-radius: 15px;
@@ -56,33 +50,92 @@ nav{
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
+  float: right;
 }
 #doneButton{
   border-radius: 15px;
+  background-color: teal;
+  outline-color: saddlebrown;
+  outline-style: solid;
+  outline-width: 2px;
+  color: white
+
+}
+#todoButton{
+  border-radius: 15px;
+  background-color: #F39797;
+  outline-color: saddlebrown;
+  outline-style: solid;
+  outline-width: 2px;
+  color: saddlebrown;
+
+}
+#inReviewButton{
+  border-radius: 15px;
+  background-color: #eedeb5;
+  outline-color: saddlebrown;
+  outline-style: solid;
+  outline-width: 2px;
+  color:saddlebrown;
+
+}
+#inProgressButton{
+  border-radius: 15px;
+  outline-color: saddlebrown;
+  background-color: #429183;
+  outline-style: solid;
+  outline-width: 2px;
+  color:white;
+
 }
 
-#todo{
-  background-color: #F39797;
-}
 #tasks{
   margin-bottom: 50px;
 } 
-#date{
-    font-size: x-large;       
+.item1 { grid-area: todo; }
+.item2 { grid-area: inReview; }
+.item3 { grid-area: inProgress; }
+.item4 { grid-area: done; }
+.item5 { grid-area: taskName; }
+.item6 { grid-area: description; }
+.item7 { grid-area: assignedTo; }
+.item8 { grid-area: dueDate; }
+.item9 { grid-area: blank; }
+.item10 { grid-area: edit; }
+.item11 { grid-area: delete; }
+
+
+.grid-container {
+  width: 80%;
+  margin:auto;
+  position:relative;
+  display: grid;
+  grid-template-areas:
+    'todo taskName taskName edit'
+    'inReview description description blank'
+    'inProgress description description blank'
+    'done assignedTo dueDate delete';
+  grid-gap: 10px;
+  background-color: #95dfd1;
+  color: saddlebrown;
+  padding: 15px 30px;
+  border: 2px solid saddlebrown;
+  border-radius: 20px;
+  
 }
-.list-group-item{
-    margin: 20px;
-    padding: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    outline-color: saddlebrown;
-    outline-style: solid;
-    outline-width: 2px;
-    background-color: #69D3C0;
-    color: saddlebrown;
-    }
+
+.grid-container > div {
+  border-radius: 20px;
+  background-color: #69D3C0;
+  text-align: left;
+  padding: 20px 0;
+  font-size: 18px;
+}
+#dateheader{
+    font-size: x-large; 
+    background-color: #F1EAD0;      
+}
+
 #resetButton{
     float: left;
     border-radius: 15px;
