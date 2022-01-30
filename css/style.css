@@ -2,11 +2,11 @@
   box-sizing: content-box;
 }
 h1{
-  font-family:Verdana, Geneva, Tahoma, sans-serif; color: #583205;  
+  font-family:Verdana, Geneva, Tahoma, sans-serif; color: saddlebrown;  
 }     
 
 #tasks{
-    background-color: #F1EAD0";
+    background-color: #F1EAD0;
     text-align: center;
 }
 nav{
@@ -14,79 +14,98 @@ nav{
 }
 #modalDialogue{
   background: #F1EAD0;
-  border-radius: 16px;
-  outline-style: inset;
-  outline-color: #583205;
+  border-radius: 16px;  
+  outline-color: saddlebrown;
+  outline-style: solid;
   outline-width: 2px;
 }
 #addTaskbutton{
-  color: #583205;
+  color: saddlebrown;
   text-align: center;
   align-content: center;
   background-color: #FC8B24;
   width: 100px;
   height: 50px;
-  border: 2px solid #583205;
+  border: 2px solid saddlebrown;
   border-radius: 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif; 
   font-size: large;  
 }
-.palePinkbutton{      
-    color: black;
-    text-align: center;
-    align-content: center;
-    background-color: #F3979750;
-    width: 120px;
-    height: 50px;
-    border: 2px solid #583205;
-    Font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    font-size: large;
-    border-radius: 20px;
-  }
   a{
     display: inline;
   } 
-  .pinkbutton{
-    color: black;
-    text-align: center;
-    align-content: center;
-    background-color: #F39797;
-    width: 120px;
-    height: 50px;
-    border: 2px solid #583205;
-    Font-family: Verdana, Geneva, Tahoma, sans-serif; 
-    font-size: large;
-    border-radius: 20px;    
-  }
+.nav-pills{
+  margin: 20px;
+}
+.nav-item{
+  outline-color: saddlebrown;
+  outline-style: solid;
+  outline-width: 2px;
+  border-radius: 15px; 
+}
+#deleteButton{
+  border-radius: 15px;
+  background-color: crimson;
+  outline-color: saddlebrown;
+  outline-style: solid;
+  outline-width: 2px;
+}
+#editButton{
+  border-radius: 15px;
+  background-color: #F1EAD0;
+  outline-color: saddlebrown;
+  outline-style: solid;
+  outline-width: 2px;
+}
+#doneButton{
+  border-radius: 15px;
+}
+
+#todo{
+  background-color: #F39797;
+}
+#tasks{
+  margin-bottom: 50px;
+} 
 #date{
     font-size: x-large;       
 }
 .list-group-item{
-    margin: 15px;
+    margin: 20px;
+    padding: 50px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    border: 20px, solid, #583205;
+    outline-color: saddlebrown;
+    outline-style: solid;
+    outline-width: 2px;
     background-color: #69D3C0;
-}
+    color: saddlebrown;
+    }
 #resetButton{
     float: left;
-    border-radius: 15%;
-    border: 2px, solid,#583205;
+    border-radius: 15px;
+    outline-color: saddlebrown;
+    outline-style: solid;
+    outline-width: 2px;
+    color: saddlebrown;
 }
 #submitButton{
     float: right;
-    border-radius: 15%;
-    border: 2px, solid,#583205;
+    border-radius: 15px;
+    outline-color: saddlebrown;
+    outline-style: solid;
+    outline-width: 2px;
+    color: saddlebrown;
 }
 #staticBackdrop{
-    border: 15px, solid, #583205;
+    outline-color: saddlebrown;
+    outline-style: solid;
+    outline-width: 2px;
+    color: #fc7124;
 }
 h5{
     text-align: center;
     color: #fc7124;
-}
-#tasksList{
-    height: fit-content;
 }
