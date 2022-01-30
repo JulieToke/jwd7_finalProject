@@ -5,29 +5,19 @@
 // Add a Delete button with the class delete-button
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => `
   <li class="card list-group-item" data-task-id=${id}>
-    <div class="card-header">
-      <h2>Task: ${name}</h2> 
-      <div class="d-flex w-100 mb-3 justify-content-end">
-        <p>Due: ${dueDate}</p>
-      </div>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title justify-content-center">Details: ${description}</h4>
-      <p class="card-text"></p>
-    </div>
-
-    <div class="d-flex w-100 mb-3 justify-content-end">  
-      <p>Assigned To: ${assignedTo}</p>
-    </div>
-
-    <div class="card-footer">
-          <!-- Button trigger modal -->
-      <button id="editButton" type="button" class="btn" data-toggle="modal" data-target="#staticBackdrop">Edit</button>
-
-      <button id="doneButton" class="btn done-button float-middle ${status === 'To Do' ? 'visible' : 'invisible'}">Mark As Done</button> 
-
-      <button id="deleteButton" class="btn   delete-button float-right">Delete</button> 
-    </div>
+  <div id="task" class="grid-container">
+  <div class="item1"><button id="todoButton" class="btn todo-button ${status === 'To Do' ? 'visible' : 'invisible'}">To Do</button></div>
+  <div class="item2"><button id="inProgressButton" class="btn in-progress-button ${status === 'In Progress' ? 'visible' : 'invisible'}">In Progress</button></div>
+  <div class="item3"><button id="inReviewButton" class="btn ${status === 'In Review' ? 'visible' : 'invisible'}">In Review</button></div>  
+  <div class="item4"><button id="doneButton" class="btn done-button ${status === 'Done' ? 'visible' : 'invisible'}">Done</button></div>
+  <div class="item5"><h3>Task Name: ${name}</h3></div>
+  <div class="item6">Details: ${description}</div>
+  <div class="item7">Assigned To: ${assignedTo}</div>
+  <div class="item8">Due: ${dueDate}</div>
+  <div class="item9"></div>
+  <div class="item10"><button id="editButton" class="btn edit-button" data-toggle="modal" data-target="#staticBackdrop">Edit</button></div>
+  <div class="item11"><button id="deleteButton" class="btn delete-button">Delete</button></div>
+</div>
   </li>
 `;           
     
@@ -59,7 +49,7 @@ class TaskManager {
             status: status
         };
 
-        // Push the new task to the task list
+        // Push the new task to the new task list
         this.tasks.push(task);
 
         // sort task list by due date
