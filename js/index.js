@@ -89,11 +89,11 @@ modal.addEventListener('click', (event) => {
     }
 });
 
-// addTaskButton selector
+// Select newTaskButton
 const addTaskButton = document.querySelector('#addTaskbutton');
 
 // Close form event listener to reset form values
-addTaskButton.addEventListener('click', () => {
+addTaskbutton.addEventListener('click', (event) => {
     // Get modal inputs
     const newTaskId = document.querySelector('#newTaskId');
     const newTaskNameInput = document.querySelector('#newTaskNameInput');
@@ -113,14 +113,13 @@ addTaskButton.addEventListener('click', () => {
     modalTitle.textContent = 'Add New Task';
 });
 
-
 // Select the Tasks List
 const tasksList = document.querySelector('#tasksList');
 
 // Add an 'onclick' event listener to the Tasks List
 tasksList.addEventListener('click', (event) => {
     // Check if a "Mark As Done" button was clicked
-    if (event.target.classList.contains('done-button')) {
+    /*if (event.target.classList.contains('done-button')) {
         // Get the parent Task
         const parentTask = event.target.parentElement.parentElement;
 
@@ -138,7 +137,7 @@ tasksList.addEventListener('click', (event) => {
 
         // Render the tasks
         taskManager.render();
-    }
+    }*/
 
     // Check if an "Edit" button was clicked
     if (event.target.classList.contains('edit-button')) {
