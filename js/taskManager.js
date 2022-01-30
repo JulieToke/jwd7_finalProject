@@ -22,11 +22,11 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => `
 
     <div class="card-footer">
           <!-- Button trigger modal -->
-      <button type="button" class="btn btn-light edit-button btn-text-dark" data-toggle="modal" data-target="#staticBackdrop">Edit</button>
+      <button id="editButton" type="button" class="btn" data-toggle="modal" data-target="#staticBackdrop">Edit</button>
 
-      <button id="doneButton" class="btn btn-info done-button float-middle ${status === 'To Do' ? 'visible' : 'invisible'}">Mark As Done</button> 
+      <button id="doneButton" class="btn done-button float-middle ${status === 'To Do' ? 'visible' : 'invisible'}">Mark As Done</button> 
 
-      <button id="deleteButton" class="btn btn-danger btn-text-white delete-button float-right">Delete</button> 
+      <button id="deleteButton" class="btn   delete-button float-right">Delete</button> 
     </div>
   </li>
 `;           
