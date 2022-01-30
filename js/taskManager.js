@@ -64,7 +64,7 @@ class TaskManager {
 
         // sort task list by due date
         this.tasks.sort(function(a, b) {
-            return new Date(b.date) - new Date(a.date); 
+            return new Date(a.dueDate) - new Date(b.dueDate); 
         });
     }
 
