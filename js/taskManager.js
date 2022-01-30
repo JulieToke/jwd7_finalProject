@@ -59,8 +59,13 @@ class TaskManager {
             status: status
         };
 
-        // Push the new task to the new task list
+        // Push the new task to the task list
         this.tasks.push(task);
+
+        // sort task list by due date
+        this.tasks.sort(function(a, b) {
+            return new Date(a.dueDate) - new Date(b.dueDate); 
+        });
     }
 
     // Create the deleteTask method
