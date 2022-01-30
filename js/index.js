@@ -74,7 +74,6 @@ modal.addEventListener('click', (event) => {
         const newTaskNameInput = document.querySelector('#newTaskNameInput');
         const newTaskDescription = document.querySelector('#newTaskDescription');
         const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
-        const newTaskStatus = document.querySelector('#newTaskStatus');
         const newTaskDueDate = document.querySelector('#newTaskDueDate');
 
         const modalTitle = document.querySelector('#staticBackdropLabel');
@@ -89,6 +88,31 @@ modal.addEventListener('click', (event) => {
         modalTitle.textContent = 'Add New Task';
     }
 });
+
+// addTaskButton selector
+const addTaskButton = document.querySelector('#addTaskbutton');
+
+// Close form event listener to reset form values
+addTaskButton.addEventListener('click', () => {
+    // Get modal inputs
+    const newTaskId = document.querySelector('#newTaskId');
+    const newTaskNameInput = document.querySelector('#newTaskNameInput');
+    const newTaskDescription = document.querySelector('#newTaskDescription');
+    const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
+    const newTaskDueDate = document.querySelector('#newTaskDueDate');
+
+    const modalTitle = document.querySelector('#staticBackdropLabel');
+    
+    // Clear the form
+    newTaskId.value = '-1';
+    newTaskNameInput.value = '';
+    newTaskDescription.value = '';
+    newTaskAssignedTo.value = '';
+    newTaskDueDate.value = '';
+
+    modalTitle.textContent = 'Add New Task';
+});
+
 
 // Select the Tasks List
 const tasksList = document.querySelector('#tasksList');
