@@ -1,29 +1,31 @@
-*{
-  box-sizing: content-box;
-}
-*{
+* {
   box-sizing: content-box;
   font-family: 'Work Sans';
 }
-h1{
-  font-family:Verdana, Geneva, Tahoma, sans-serif; color: saddlebrown;  
-}     
 
-#tasks{
-    background-color: #F1EAD0;
-    text-align: center;
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: saddlebrown;
 }
-nav{
-    display: inline-flex;
+
+#tasks {
+  background-color: #F1EAD0;
+  text-align: center;
 }
-#modalDialogue{
+
+nav {
+  display: inline-flex;
+}
+
+#modalDialogue {
   background: #F1EAD0;
-  border-radius: 16px;  
+  border-radius: 16px;
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
 }
-#addTaskbutton{
+
+#addTaskbutton {
   color: saddlebrown;
   text-align: center;
   align-content: center;
@@ -32,11 +34,11 @@ nav{
   height: 50px;
   border: 2px solid saddlebrown;
   border-radius: 15px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif; 
-  font-size: large;  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
 }
 
-#deleteButton{
+#deleteButton {
   border-radius: 15px;
   background-color: crimson;
   outline-color: saddlebrown;
@@ -44,7 +46,8 @@ nav{
   outline-width: 2px;
   float: right;
 }
-#editButton{
+
+#editButton {
   border-radius: 15px;
   background-color: #F1EAD0;
   outline-color: saddlebrown;
@@ -52,16 +55,17 @@ nav{
   outline-width: 2px;
   float: right;
 }
-#doneButton{
+
+#doneButton {
   border-radius: 15px;
   background-color: teal;
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
   color: white
-
 }
-#todoButton{
+
+#todoButton {
   border-radius: 15px;
   background-color: #F39797;
   outline-color: saddlebrown;
@@ -70,45 +74,80 @@ nav{
   color: saddlebrown;
 
 }
-#inReviewButton{
+
+#inReviewButton {
   border-radius: 15px;
   background-color: #eedeb5;
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
-  color:saddlebrown;
+  color: saddlebrown;
 
 }
-#inProgressButton{
+
+#inProgressButton {
   border-radius: 15px;
   outline-color: saddlebrown;
   background-color: #429183;
   outline-style: solid;
   outline-width: 2px;
-  color:white;
+  color: white;
 
 }
 
-#tasks{
+#tasks {
   margin-bottom: 50px;
-} 
-.item1 { grid-area: todo; }
-.item2 { grid-area: inReview; }
-.item3 { grid-area: inProgress; }
-.item4 { grid-area: done; }
-.item5 { grid-area: taskName; }
-.item6 { grid-area: description; }
-.item7 { grid-area: assignedTo; }
-.item8 { grid-area: dueDate; }
-.item9 { grid-area: blank; }
-.item10 { grid-area: edit; }
-.item11 { grid-area: delete; }
+}
+
+.item1 {
+  grid-area: todo;
+}
+
+.item2 {
+  grid-area: inReview;
+}
+
+.item3 {
+  grid-area: inProgress;
+}
+
+.item4 {
+  grid-area: done;
+}
+
+.item5 {
+  grid-area: taskName;
+}
+
+.item6 {
+  grid-area: description;
+}
+
+.item7 {
+  grid-area: assignedTo;
+}
+
+.item8 {
+  grid-area: dueDate;
+}
+
+.item9 {
+  grid-area: blank;
+}
+
+.item10 {
+  grid-area: edit;
+}
+
+.item11 {
+  grid-area: delete;
+}
 
 
 .grid-container {
   width: 80%;
-  margin:auto;
-  position:relative;
+  margin: auto;
+  position: relative;
   display: grid;
   grid-template-areas:
     'todo taskName taskName edit'
@@ -121,44 +160,48 @@ nav{
   padding: 15px 30px;
   border: 2px solid saddlebrown;
   border-radius: 20px;
-  
+
 }
 
-.grid-container > div {
+.grid-container>div {
   border-radius: 20px;
   background-color: #69D3C0;
   text-align: left;
   padding: 20px 0;
   font-size: 18px;
 }
-#dateheader{
-    font-size: x-large; 
-    background-color: #F1EAD0;      
+
+#dateheader {
+  font-size: x-large;
+  background-color: #F1EAD0;
 }
 
-#resetButton{
-    float: left;
-    border-radius: 15px;
-    outline-color: saddlebrown;
-    outline-style: solid;
-    outline-width: 2px;
-    color: saddlebrown;
+#resetButton {
+  float: left;
+  border-radius: 15px;
+  outline-color: saddlebrown;
+  outline-style: solid;
+  outline-width: 2px;
+  color: saddlebrown;
 }
-#submitButton{
-    float: right;
-    border-radius: 15px;
-    outline-color: saddlebrown;
-    outline-style: solid;
-    outline-width: 2px;
-    color: saddlebrown;
+
+#submitButton {
+  float: right;
+  border-radius: 15px;
+  outline-color: saddlebrown;
+  outline-style: solid;
+  outline-width: 2px;
+  color: saddlebrown;
 }
-#staticBackdrop{
-    outline-color: saddlebrown;
-    outline-style: solid;
-    outline-width: 2px;
-    color: #fc7124;
+
+#staticBackdrop {
+  outline-color: saddlebrown;
+  outline-style: solid;
+  outline-width: 2px;
+  color: #fc7124;
 }
-h5{
-    text-align: center;
-    color: #fc7124;
+
+h5 {
+  text-align: center;
+  color: #fc7124;
 }
