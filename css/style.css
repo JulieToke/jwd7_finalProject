@@ -56,7 +56,7 @@ nav {
 
 #doneButton {
   border-radius: 15px;
-  background-color: teal;
+  background-color: #FC8B24;
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
@@ -75,7 +75,7 @@ nav {
 
 #inReviewButton {
   border-radius: 15px;
-  background-color: #eedeb5;
+  background-color: #F1DD97;
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
@@ -86,7 +86,7 @@ nav {
 #inProgressButton {
   border-radius: 15px;
   outline-color: saddlebrown;
-  background-color: #429183;
+  background-color: #A3B877;
   outline-style: solid;
   outline-width: 2px;
   color: white;
