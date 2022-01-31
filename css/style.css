@@ -6,10 +6,10 @@
 h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: saddlebrown;
+  padding: 25px;
 }
 
 #tasks {
-  background-color: #F1EAD0;
   text-align: center;
 }
 
@@ -44,7 +44,6 @@ nav {
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
-  float: right;
 }
 
 #editButton {
@@ -53,7 +52,6 @@ nav {
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
-  float: right;
 }
 
 #doneButton {
@@ -93,10 +91,6 @@ nav {
   outline-width: 2px;
   color: white;
 
-}
-
-#tasks {
-  margin-bottom: 50px;
 }
 
 .item1 {
@@ -143,9 +137,12 @@ nav {
   grid-area: delete;
 }
 
+.list-group-item {
+  border-color: #fff;
+}
 
 .grid-container {
-  width: 80%;
+  width: 60%;
   margin: auto;
   position: relative;
   display: grid;
@@ -160,13 +157,13 @@ nav {
   padding: 15px 30px;
   border: 2px solid saddlebrown;
   border-radius: 20px;
-
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .grid-container>div {
   border-radius: 20px;
   background-color: #69D3C0;
-  text-align: left;
+  text-align: center;
   padding: 20px 0;
   font-size: 18px;
 }
