@@ -1,6 +1,10 @@
 //new date
-const todaysDate = new Date();
-document.getElementById("date").innerHTML = todaysDate;
+const dateElement = document.querySelector("#date-element");
+let today = new Date();
+const [month, day, year] = [today.getMonth(), today.getDate(), today.getFullYear()];
+let dateString = `Today's date: ${day} / ${month + 1} / ${year}`;
+dateElement.innerHTML = dateString;
+//document.getElementById("date").innerHTML = todaysDate;
 
 // Initialize a new TaskManager with currentId set to 0
 const taskManager = new TaskManager(0);
@@ -18,7 +22,17 @@ const newTaskForm = document.querySelector('#newTaskForm');
 newTaskForm.addEventListener('submit', (event) => {
     // Prevent default action
     event.preventDefault();
-
+    //Form validation for the due date   
+    let todaysDate = new Date(Date.now())     
+    .toLocaleString()     
+    .split(",")[0]     
+    .split("/");   
+    let day = todaysDate[0];   
+    let month = todaysDate[1];   
+    let year = todaysDate[2];   
+    // taskDueDate is in yyyy-mm-dd format   
+    let taskDueDate = validateDueDate.value.split("-");
+    
     // Select the inputs
     const newTaskId = document.querySelector('#newTaskId');
     const newTaskNameInput = document.querySelector('#newTaskNameInput');
@@ -115,7 +129,7 @@ tasksList.addEventListener('click', (event) => {
         taskManager.render();
     }
     */
-   
+
     // Check if an "Edit" button was clicked
     if (event.target.classList.contains('edit-button')) {
         // Get the parent Task
