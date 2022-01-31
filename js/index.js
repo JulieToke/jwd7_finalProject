@@ -114,8 +114,7 @@ tasksList.addEventListener('click', (event) => {
         // Render the tasks
         taskManager.render();
     }
-    */
-   
+*/
     // Check if an "Edit" button was clicked
     if (event.target.classList.contains('edit-button')) {
         // Get the parent Task
@@ -151,7 +150,7 @@ tasksList.addEventListener('click', (event) => {
     // Check if a "Delete" button was clicked
     if (event.target.classList.contains('delete-button')) {
         // Get the parent Task
-        const parentTask = event.target.parentElement.parentElement;
+        const parentTask = event.target.parentElement.parentElement.parentElement;
 
         // Get the taskId of the parent Task.
         const taskId = Number(parentTask.dataset.taskId);
