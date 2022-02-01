@@ -14,7 +14,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => `
   <div class="item6">Details: ${description}</div>
   <div class="item7">Assigned To: ${assignedTo}</div>
   <div class="item8">Due: ${dueDate}</div>
-  <div class="item9"></div>
+  <div class="item9"><button id="MarkAsDoneButton" class="btn mark-as-done-button ${status === 'In Progress' || status === 'To Do' || status === 'In Review'? 'visible' : 'invisible'}">Mark as Done</button></div>
   <div class="item10"><button id="editButton" class="btn edit-button" data-toggle="modal" data-target="#staticBackdrop">Edit</button></div>
   <div class="item11"><button id="deleteButton" class="btn delete-button">Delete</button></div>
 </div>

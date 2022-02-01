@@ -95,9 +95,9 @@ const tasksList = document.querySelector('#tasksList');
 // Add an 'onclick' event listener to the Tasks List
 tasksList.addEventListener('click', (event) => {
     // Check if a "Mark As Done" button was clicked
-    /*if (event.target.classList.contains('done-button')) {
+    if (event.target.classList.contains('mark-as-done-button')) {
         // Get the parent Task
-        const parentTask = event.target.parentElement.parentElement;
+        const parentTask = event.target.parentElement.parentElement.parentElement;
 
         // Get the taskId of the parent Task.
         const taskId = Number(parentTask.dataset.taskId);
@@ -106,7 +106,7 @@ tasksList.addEventListener('click', (event) => {
         const task = taskManager.getTaskById(taskId);
 
         // Update the task status to 'DONE'
-        task.status = 'DONE';
+        task.status = 'Done';
 
         // Save the tasks to localStorage
         taskManager.save();
@@ -114,11 +114,11 @@ tasksList.addEventListener('click', (event) => {
         // Render the tasks
         taskManager.render();
     }
-*/
+
     // Check if an "Edit" button was clicked
     if (event.target.classList.contains('edit-button')) {
         // Get the parent Task
-        const parentTask = event.target.parentElement.parentElement;
+        const parentTask = event.target.parentElement.parentElement.parentElement;
 
         // Get the taskId of the parent Task.
         const taskId = Number(parentTask.dataset.taskId);
