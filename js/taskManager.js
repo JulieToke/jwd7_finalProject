@@ -8,13 +8,13 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => `
   <div id="task" class="grid-container">
   <div class="item1"><button id="todoButton" class="btn todo-button ${status === 'To Do' ? 'visible' : 'invisible'}">To Do</button></div>
   <div class="item2"><button id="inProgressButton" class="btn in-progress-button ${status === 'In Progress' ? 'visible' : 'invisible'}">In Progress</button></div>
-  <div class="item3"><button id="inReviewButton" class="btn ${status === 'In Review' ? 'visible' : 'invisible'}">In Review</button></div>  
+  <div class="item3"><button id="inReviewButton" class="btn in-review-button ${status === 'In Review' ? 'visible' : 'invisible'}">In Review</button></div>  
   <div class="item4"><button id="doneButton" value="DONE" class="btn done-button ${status === 'Done' ? 'visible' : 'invisible'}">Done</button></div>
   <div class="item5"><h3>Task Name: ${name}</h3></div>
   <div class="item6">Details: ${description}</div>
   <div class="item7">Assigned To: ${assignedTo}</div>
   <div class="item8">Due: ${dueDate}</div>
-  <div class="item9"><button id="markAsDoneButton" class="btn done-button ${status === 'To Do' ? 'visible' : 'invisible'}${status === 'Done' ? 'invisible' : 'visible'}">Mark as Done</button></div>
+  <div class="item9"><button id="markAsDoneButton" class="btn mark-as-done-button ${status === 'To Do' || status === 'In Progress' || status === 'In Review' ? 'visible' : 'invisible'}">Mark as Done</button></div>
   <div class="item10"><button id="editButton" class="btn edit-button" data-toggle="modal" data-target="#staticBackdrop">Edit</button></div>
   <div class="item11"><button id="deleteButton" class="btn delete-button">Delete</button></div>
 </div>
