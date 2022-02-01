@@ -89,6 +89,30 @@ modal.addEventListener('click', (event) => {
     }
 });
 
+// Select newTaskButton
+const addTaskButton = document.querySelector('#addTaskbutton');
+
+// Close form event listener to reset form values
+addTaskbutton.addEventListener('click', (event) => {
+    // Get modal inputs
+    const newTaskId = document.querySelector('#newTaskId');
+    const newTaskNameInput = document.querySelector('#newTaskNameInput');
+    const newTaskDescription = document.querySelector('#newTaskDescription');
+    const newTaskAssignedTo = document.querySelector('#newTaskAssignedTo');
+    const newTaskDueDate = document.querySelector('#newTaskDueDate');
+
+    const modalTitle = document.querySelector('#staticBackdropLabel');
+
+    // Clear the form
+    newTaskId.value = '-1';
+    newTaskNameInput.value = '';
+    newTaskDescription.value = '';
+    newTaskAssignedTo.value = '';
+    newTaskDueDate.value = '';
+
+    modalTitle.textContent = 'Add New Task';
+});
+
 // Select the Tasks List
 const tasksList = document.querySelector('#tasksList');
 
@@ -145,6 +169,7 @@ tasksList.addEventListener('click', (event) => {
         newTaskDueDate.value = task.dueDate;
 
         modalTitle.textContent = 'Edit Task';
+
     }
 
     // Check if a "Delete" button was clicked
