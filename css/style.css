@@ -168,7 +168,7 @@ nav {
     'inProgress description description blank'
     'done assignedTo dueDate delete';
   grid-gap: 10px;
-  background-color: #95dfd1;
+  background-color: #69D3C0;
   color: saddlebrown;
   padding: 15px 30px;
   border: 2px solid saddlebrown;
@@ -178,7 +178,8 @@ nav {
 
 .grid-container>div {
   border-radius: 20px;
-  background-color: #69D3C0;
+  background-color: #95dfd1
+;
   text-align: center;
   padding: 20px 0;
   font-size: 18px;
