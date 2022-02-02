@@ -62,6 +62,14 @@ nav {
   color: white
 }
 
+#MarkAsDoneButton {
+  border-radius: 15px;
+  background-color: #c2e3e9;
+  outline-color: saddlebrown;
+  outline-style: solid;
+  outline-width: 2px;
+  color: saddlebrown;
+}
 #doneButton {
   border-radius: 15px;
   background-color: #FC8B24;
