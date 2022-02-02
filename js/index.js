@@ -1,6 +1,8 @@
 //new date
-const todaysDate = new Date();
-document.getElementById("date").innerHTML = todaysDate;
+let todaysDate = new Date();
+document.getElementById("date").innerHTML = todaysDate.toDateString();
+console.log(todaysDate)
+
 
 // Initialize a new TaskManager with currentId set to 0
 const taskManager = new TaskManager(0);
