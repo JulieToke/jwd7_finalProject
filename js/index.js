@@ -1,4 +1,4 @@
-//new date
+//Put in the current date string 
 let todaysDate = new Date();
 document.getElementById("date").innerHTML = todaysDate.toDateString();
 console.log(todaysDate)
@@ -31,11 +31,7 @@ newTaskForm.addEventListener('submit', (event) => {
 
     const modalTitle = document.querySelector('#staticBackdropLabel');
 
-    /*
-        Validation code here
-    */
-
-    // Get the values of the inputs
+       // Get the values of the inputs
     const newId = newTaskId.value;
     const name = newTaskNameInput.value;
     const description = newTaskDescription.value;
@@ -46,6 +42,7 @@ newTaskForm.addEventListener('submit', (event) => {
     // Add the task to the task manager
     taskManager.addTask(name, description, assignedTo, dueDate, status, newId);
 
+    
     // Save the tasks to localStorage
     taskManager.save();
 
@@ -91,11 +88,12 @@ modal.addEventListener('click', (event) => {
     }
 });
 
+
 // Select newTaskButton
 const addTaskButton = document.querySelector('#addTaskbutton');
 
 // Close form event listener to reset form values
-addTaskbutton.addEventListener('click', (event) => {
+addTaskButton.addEventListener('click', (event) => {
     // Get modal inputs
     const newTaskId = document.querySelector('#newTaskId');
     const newTaskNameInput = document.querySelector('#newTaskNameInput');
@@ -123,7 +121,7 @@ tasksList.addEventListener('click', (event) => {
     // Check if a "Mark As Done" button was clicked
     if (event.target.classList.contains('mark-as-done-button')) {
         // Get the parent Task
-        const parentTask = event.target.parentElement.parentElement.parentElement;
+        const parentTask = event.target.parentElement.parentElement;
 
         // Get the taskId of the parent Task.
         const taskId = Number(parentTask.dataset.taskId);
@@ -141,10 +139,12 @@ tasksList.addEventListener('click', (event) => {
         taskManager.render();
     }
 
+   
+
     // Check if an "Edit" button was clicked
     if (event.target.classList.contains('edit-button')) {
         // Get the parent Task
-        const parentTask = event.target.parentElement.parentElement.parentElement;
+        const parentTask = event.target.parentElement.parentElement;
 
         // Get the taskId of the parent Task.
         const taskId = Number(parentTask.dataset.taskId);
@@ -173,11 +173,11 @@ tasksList.addEventListener('click', (event) => {
         modalTitle.textContent = 'Edit Task';
 
     }
-
+    
     // Check if a "Delete" button was clicked
     if (event.target.classList.contains('delete-button')) {
         // Get the parent Task
-        const parentTask = event.target.parentElement.parentElement.parentElement;
+        const parentTask = event.target.parentElement.parentElement;
 
         // Get the taskId of the parent Task.
         const taskId = Number(parentTask.dataset.taskId);
@@ -190,5 +190,6 @@ tasksList.addEventListener('click', (event) => {
 
         // Render the tasks
         taskManager.render();
+        
     }
 });
