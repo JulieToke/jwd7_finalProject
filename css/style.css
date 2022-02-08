@@ -9,13 +9,20 @@ h1 {
   padding: 25px;
 }
 
-#tasks {
-  text-align: center;
+
+#task {
+  width: 80%;
+  background-color:  #95dfd1;
+  border: 2px solid saddlebrown;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  position: relative;
+  margin: 30px auto 30px;
 }
 
-nav {
+#nav {
   display: inline-flex;
-}
+  }
 
 #modalDialogue {
   background: #F1EAD0;
@@ -39,38 +46,42 @@ nav {
 }
 
 #deleteButton {
+  width: 25%;
+  height:25px;
+  color: white;
   border-radius: 15px;
   background-color: crimson;
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
+  float: right;
 }
 
 #editButton {
+  width: 25%;
+  height:25px;
   border-radius: 15px;
   background-color: #F1EAD0;
+  color: saddlebrown;
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
+  float: left;
 }
-#markAsDoneButton{
+#markDoneButton{
+  width: 25%;
+  height:25px;
   border-radius: 15px;
   background-color: rgb(102, 167, 134);
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
-  color: white
+  color: white;
+  margin-left: 50px;
 }
 
-#MarkAsDoneButton {
-  border-radius: 15px;
-  background-color: #c2e3e9;
-  outline-color: saddlebrown;
-  outline-style: solid;
-  outline-width: 2px;
-  color: saddlebrown;
-}
 #doneButton {
+  width: 20%;
   border-radius: 15px;
   background-color: #FC8B24;
   outline-color: saddlebrown;
@@ -79,17 +90,19 @@ nav {
   color: white
 }
 
-#todoButton {
-  border-radius: 15px;
-  background-color: #F39797;
+#toDoButton {
+  width: 20%;
+  border-radius: 15px; 
+  background-color: pink; 
   outline-color: saddlebrown;
   outline-style: solid;
   outline-width: 2px;
-  color: saddlebrown;
+  color: saddlebrown; 
 
 }
 
-#inReviewButton {
+#reviewButton {
+  width: 20%;
   border-radius: 15px;
   background-color: #F1DD97;
   outline-color: saddlebrown;
@@ -100,6 +113,7 @@ nav {
 }
 
 #inProgressButton {
+  width: 20%;
   border-radius: 15px;
   outline-color: saddlebrown;
   background-color: #A3B877;
@@ -109,79 +123,10 @@ nav {
 
 }
 
-.item1 {
-  grid-area: todo;
-}
-
-.item2 {
-  grid-area: inReview;
-}
-
-.item3 {
-  grid-area: inProgress;
-}
-
-.item4 {
-  grid-area: done;
-}
-
-.item5 {
-  grid-area: taskName;
-}
-
-.item6 {
-  grid-area: description;
-}
-
-.item7 {
-  grid-area: assignedTo;
-}
-
-.item8 {
-  grid-area: dueDate;
-}
-
-.item9 {
-  grid-area: blank;
-}
-
-.item10 {
-  grid-area: edit;
-}
-
-.item11 {
-  grid-area: delete;
-}
-
-.list-group-item {
-  border-color: #fff;
-}
-
-.grid-container {
-  width: 50%;
-  margin: auto;
-  position: relative;
-  display: grid;
-  grid-template-areas:
-    'todo taskName taskName edit'
-    'inReview description description blank'
-    'inProgress description description blank'
-    'done assignedTo dueDate delete';
-  grid-gap: 10px;
-  background-color: #69D3C0;
-  color: saddlebrown;
-  padding: 15px 30px;
-  border: 2px solid saddlebrown;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.grid-container>div {
-  border-radius: 20px;
-  background-color: #95dfd1;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 18px;
+ .card-body{ 
+  background-color: #95dfd1;;
+  color: saddlebrown; 
+  
 }
 
 #dateheader {
@@ -214,7 +159,3 @@ nav {
   color: #fc7124;
 }
 
-h5 {
-  text-align: center;
-  color: #fc7124;
-}

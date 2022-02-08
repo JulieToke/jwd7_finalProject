@@ -1,26 +1,31 @@
-// Create the HTML for a task
+// Create the HTML for each task list item or task
 // Add an data-task-id attribute to each task
-// OPTIONAL 1: Add visible or invisible class to the "Mark As Done" button depending on if the status is 'TODO'
-// OPTIONAL 2: Change the styling of the status pill depending on the passed in status
+// OPTIONAL - 1: Add visible class to the 'Mark As Done' button if the status is 'To Do', 'In Progress' or 'Review' or else if the status is 'Done' set the 'Mark As Done' to 'invisible'
+// OPTIONAL - 2: Add a status Badge or Button and change the styling of it depending on the passed in status
 // Add a Delete button with the class delete-button
+//Add an Edit button to trigger a modal in which a task can be edited 
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => `
-  <li class="card list-group-item" data-task-id=${id}>
-  <div id="task" class="grid-container">
-  <div class="item1"><button id="todoButton" class="btn todo-button ${status === 'To Do' ? 'visible' : 'invisible'}">To Do</button></div>
-  <div class="item2"><button id="inProgressButton" class="btn in-progress-button ${status === 'In Progress' ? 'visible' : 'invisible'}">In Progress</button></div>
-  <div class="item3"><button id="inReviewButton" class="btn in-review-button ${status === 'In Review' ? 'visible' : 'invisible'}">In Review</button></div>  
-  <div class="item4"><button id="doneButton" value="DONE" class="btn done-button ${status === 'Done' ? 'visible' : 'invisible'}">Done</button></div>
-  <div class="item5"><h3>Task Name: ${name}</h3></div>
-  <div class="item6">Details: ${description}</div>
-  <div class="item7">Assigned To: ${assignedTo}</div>
-  <div class="item8">Due: ${dueDate}</div>
-  <div class="item9"><button id="markAsDoneButton" class="btn mark-as-done-button ${status === 'To Do' || status === 'In Progress' || status ==='In Review' ? 'visible' : 'invisible'}">Mark as Done</button></div>
-  <div class="item10"><button id="editButton" class="btn edit-button" data-toggle="modal" data-target="#staticBackdrop">Edit</button></div>
-  <div class="item11"><button id="deleteButton" class="btn delete-button">Delete</button></div>
+<li id="task" class="card" style="max-width: 100%;" data-task-id=${id}>
+<div class="card-header">
+    <button id="toDoButton" class="btn todo-button ${status === 'To Do' ? 'visible' : 'invisible'}">To Do</button>
+    <button id="inProgressButton" class="btn in-progress-button ${status === 'In Progress' ? 'visible' : 'invisible'}">In Progress</button>
+    <button id="reviewButton" class="btn review-button ${status === 'Review' ? 'visible' : 'invisible'}">Review</button>
+    <button id="doneButton" value="DONE" class="btn done-button ${status === 'Done' ? 'visible' : 'invisible'}">Done</button>
 </div>
-  </li>
-`;           
-    
+<div class="card-body">
+  <h4 class="card-title">Task: ${name}</h4>
+  <p class="card-text">Description: ${description}</p>
+  <p class="card-text">Assigned To: ${assignedTo}</p>
+  <p class="card-text">Due Date: ${dueDate}</p>
+</div>
+<div class="card-footer">    
+    <button id="editButton" class="btn edit-button" data-toggle="modal" data-target="#staticBackdrop">Edit</button>
+    <button id="markDoneButton" class="btn mark-as-done-button ${status === 'To Do' || status === 'In Progress' || status ==='Review' ? 'visible' : 'invisible'}">Mark as Done</button>
+    <button id="deleteButton" class="btn delete-button">Delete</button>
+</div>
+</li>
+`;        
+  
 
 // Create a TaskManager class
 class TaskManager {
