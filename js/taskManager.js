@@ -1,9 +1,4 @@
-// Create the HTML for each task list item or task
-// Add an data-task-id attribute to each task
-// OPTIONAL - 1: Add visible class to the 'Mark As Done' button if the status is 'To Do', 'In Progress' or 'Review' or else if the status is 'Done' set the 'Mark As Done' to 'invisible'
-// OPTIONAL - 2: Add a status Badge or Button and change the styling of it depending on the passed in status
-// Add a Delete button with the class delete-button
-//Add an Edit button to trigger a modal in which a task can be edited 
+//Create the task HTML   
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => `
 <li id="task" class="card" style="max-width: 100%;" data-task-id=${id}>
 <div class="card-header">
