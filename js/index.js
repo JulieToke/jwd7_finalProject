@@ -1,3 +1,5 @@
+
+//I am a test trigger
 //Put in the current date string 
 let todaysDate = new Date();
 document.getElementById("date").innerHTML = todaysDate.toDateString();
